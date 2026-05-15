@@ -1,6 +1,7 @@
 // Routes: / | /brands | /agencies | /influencers | /resources | /pricing | /faq
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
+import ScrollToTop from './components/ScrollToTop'
 import Header from './components/Header'
 import HomePage from './pages/HomePage'
 import BrandPage from './pages/BrandPage'
@@ -13,6 +14,7 @@ import FAQPage from './pages/FAQPage'
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen bg-white">
         <Header />
         <main>
