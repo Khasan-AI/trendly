@@ -214,29 +214,25 @@ const plans = {
 
 export default function PricingCards({ activeTab, billing }) {
   const cards = plans[activeTab]
+  const isAnnual = billing === 'annual'
 
   return (
     <section className="bg-white py-12 lg:py-20">
       <div className="max-w-[1280px] mx-auto w-full px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 items-start">
           {cards.map((plan) => {
-            const price = billing === 'annual' ? plan.price.annual : plan.price.monthly
-            const label = billing === 'annual' ? plan.priceLabel.annual : plan.priceLabel.monthly
+            const price      = isAnnual ? plan.price.annual   : plan.price.monthly
+            const yearlyTotal = isAnnual && plan.price.annual  ? plan.price.annual * 12 : null
 
             return (
               <div
                 key={plan.name}
                 className="relative bg-white rounded-xl flex flex-col"
-                style={{
-                  border: plan.highlight ? '2px solid #009cde' : '1px solid #e5e7eb',
-                }}
+                style={{ border: plan.highlight ? '2px solid #009cde' : '1px solid #e5e7eb' }}
               >
                 {/* Most Popular badge */}
                 {plan.badge && (
-                  <div
-                    className="absolute left-1/2 -top-4"
-                    style={{ transform: 'translateX(-50%)' }}
-                  >
+                  <div className="absolute left-1/2 -top-4" style={{ transform: 'translateX(-50%)' }}>
                     <span className="bg-[#009cde] text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
                       {plan.badge}
                     </span>
@@ -250,19 +246,44 @@ export default function PricingCards({ activeTab, billing }) {
                     <p className="text-sm text-gray-600">{plan.desc}</p>
                   </div>
 
-                  {/* Price */}
+                  {/* Price block */}
                   <div className="flex flex-col gap-1">
-                    <div className="flex items-baseline gap-1">
-                      {price === null ? (
-                        <span className="text-4xl lg:text-5xl font-bold text-black">Custom</span>
-                      ) : (
-                        <>
+                    {price === null ? (
+                      /* Custom / Enterprise */
+                      <span className="text-4xl lg:text-5xl font-bold text-black">Custom</span>
+                    ) : price === 0 ? (
+                      /* Free tier */
+                      <>
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-4xl lg:text-5xl font-bold text-black">$0</span>
+                          <span className="text-base text-gray-500 mb-0.5">/month</span>
+                        </div>
+                        <span className="text-xs text-gray-400">Forever free</span>
+                      </>
+                    ) : isAnnual ? (
+                      /* Annual billing — show monthly rate + yearly total */
+                      <>
+                        <div className="flex items-baseline gap-1">
                           <span className="text-4xl lg:text-5xl font-bold text-black">${price}</span>
-                          <span className="text-base text-gray-600 mb-0.5">/month</span>
-                        </>
-                      )}
-                    </div>
-                    <span className="text-xs text-gray-400">{label}</span>
+                          <span className="text-base text-gray-500 mb-0.5">/month</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <span className="text-xs text-gray-400">Billed annually —</span>
+                          <span className="text-xs font-semibold text-[#009cde]">
+                            ${yearlyTotal}/year
+                          </span>
+                        </div>
+                      </>
+                    ) : (
+                      /* Monthly billing */
+                      <>
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-4xl lg:text-5xl font-bold text-black">${price}</span>
+                          <span className="text-base text-gray-500 mb-0.5">/month</span>
+                        </div>
+                        <span className="text-xs text-gray-400">Billed monthly</span>
+                      </>
+                    )}
                   </div>
 
                   {/* CTA button */}
