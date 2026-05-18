@@ -1,4 +1,5 @@
 import AgencyHero from '../components/agency/AgencyHero'
+import AgencyStats from '../components/agency/AgencyStats'
 import AgencyProblems from '../components/agency/AgencyProblems'
 import AgencyFeatures from '../components/agency/AgencyFeatures'
 import AgencyWorkflow from '../components/agency/AgencyWorkflow'
@@ -11,6 +12,7 @@ export default function AgencyPage() {
   return (
     <>
       <AgencyHero />
+      <AgencyStats />
       <AgencyProblems />
       <AgencyFeatures />
       <AgencyWorkflow />
