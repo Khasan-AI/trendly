@@ -40,11 +40,8 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 lg:h-[86px] flex items-center justify-between">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg overflow-hidden flex items-center justify-center">
-              <img src={trendlyLogo} className="w-full h-full object-contain" alt="Trendly" />
-            </div>
-            <span className="text-xl lg:text-2xl font-bold tracking-tight text-gray-900">Trendly</span>
+          <Link to="/" className="flex items-center shrink-0">
+            <img src={trendlyLogo} className="h-7 lg:h-9 w-auto object-contain" alt="Trendly" />
           </Link>
 
           {/* Desktop nav */}
@@ -112,11 +109,8 @@ export default function Header() {
       >
         {/* Drawer header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
-              <img src={trendlyLogo} className="w-full h-full object-contain" alt="Trendly" />
-            </div>
-            <span className="text-xl font-bold text-black">Trendly</span>
+          <Link to="/" className="flex items-center">
+            <img src={trendlyLogo} className="h-7 w-auto object-contain" alt="Trendly" />
           </Link>
           <button
             onClick={() => setOpen(false)}
