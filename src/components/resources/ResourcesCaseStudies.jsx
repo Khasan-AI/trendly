@@ -61,9 +61,9 @@ export default function ResourcesCaseStudies() {
             <div key={c.company} className="bg-white rounded-2xl flex flex-col p-5 lg:p-7 gap-4 lg:gap-5">
               {/* Company + industry */}
               <div className="flex items-center gap-3">
-                <span className="text-2xl lg:text-3xl font-bold text-black">{c.company}</span>
+                <span className="text-2xl lg:text-3xl font-bold" style={{ color: '#909090' }}>{c.company}</span>
                 <div className="w-px h-5 lg:h-6 bg-black rounded-full" />
-                <span className="text-sm" style={{ color: '#111111' }}>{c.industry}</span>
+                <span className="text-sm" style={{ color: '#909090' }}>{c.industry}</span>
               </div>
 
               {/* Title + desc */}
