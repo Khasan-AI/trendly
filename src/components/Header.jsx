@@ -98,13 +98,14 @@ export default function Header() {
 
       {/* Slide-in drawer (left) */}
       <div
-        className="fixed top-0 left-0 h-full w-72 sm:w-80 z-50 flex flex-col transition-transform duration-300 lg:hidden"
+        className="fixed top-0 right-0 h-full w-72 sm:w-80 z-50 flex flex-col lg:hidden"
         style={{
-          transform: open ? 'translateX(0)' : 'translateX(-100%)',
+          transform: open ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
           background: 'rgba(255,255,255,0.92)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
-          boxShadow: '4px 0 32px rgba(0,0,0,0.10)',
+          boxShadow: '-4px 0 32px rgba(0,0,0,0.10)',
         }}
       >
         {/* Drawer header */}
