@@ -1,8 +1,11 @@
-import { Check, Building2, Mic2, Briefcase } from 'lucide-react'
+import { Check } from 'lucide-react'
+import ForBrandsIcon from '../assets/icons/for brands.svg'
+import ForCreatorsIcon from '../assets/icons/for creators.svg'
+import ForAgenciesIcon from '../assets/icons/for agencies.svg'
 
 const personas = [
   {
-    Icon: Building2,
+    Icon: ForBrandsIcon,
     title: 'For Brands',
     benefits: [
       { title: 'Pay Only for Results', desc: 'CPA, CPC, CPL, or CPO — you choose the pricing model that fits your goals' },
@@ -12,7 +15,7 @@ const personas = [
     stat: { label: 'Average ROI', value: '4.2x', bar: true, barPct: 84, trend: null },
   },
   {
-    Icon: Mic2,
+    Icon: ForCreatorsIcon,
     title: 'For Creators',
     benefits: [
       { title: 'Guaranteed Payments', desc: 'All campaigns pre-funded. No "ghost" brands or payment delays' },
@@ -22,7 +25,7 @@ const personas = [
     stat: { label: 'Avg. Monthly Earnings', value: '$3,200', bar: false, trendIcon: 'arrow', trend: '+28% vs last quarter' },
   },
   {
-    Icon: Briefcase,
+    Icon: ForAgenciesIcon,
     title: 'For Agencies',
     benefits: [
       { title: 'White-Label Control', desc: 'Manage multiple brands and creators from one dashboard' },
@@ -47,8 +50,7 @@ export default function PersonaBenefits() {
             <div key={title} className="bg-white rounded-2xl flex flex-col" style={{ border: '1px solid #f3f4f6' }}>
               <div className="p-5 lg:p-7 flex flex-col gap-4 lg:gap-5 flex-1">
                 <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-[#009cde]/10 flex items-center justify-center">
-                  <Icon size={22} className="text-[#009cde] lg:hidden" />
-                  <Icon size={26} className="text-[#009cde] hidden lg:block" />
+                  <img src={Icon} className="w-7 h-7 object-contain" alt="" />
                 </div>
                 <h3 className="text-xl lg:text-2xl font-bold text-black">{title}</h3>
                 <div className="flex flex-col gap-4">

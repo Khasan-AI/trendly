@@ -1,38 +1,44 @@
 import { Check } from 'lucide-react'
+import CentralizedManagementIcon from '../../assets/icons/Centralized Management.svg'
+import StreamlinedPaymentsIcon from '../../assets/icons/Streamlined Payments.svg'
+import AdvancedAnalyticsIcon from '../../assets/icons/Advanced Analytics.svg'
+import TeamCollaborationIcon from '../../assets/icons/Team Collaboration.svg'
+import WhiteLabelOptionsIcon from '../../assets/icons/White-Label Options.svg'
+import APIIntegrationsIcon from '../../assets/icons/API & Integrations.svg'
 
 const benefits = [
   {
-    icon: '🗂️',
+    icon: CentralizedManagementIcon,
     title: 'Centralized Management',
     desc: 'Manage all your creators from one powerful dashboard. Track campaigns, payments, and performance in real-time.',
     items: ['Unified dashboard', 'Real-time tracking', 'Multi-creator view'],
   },
   {
-    icon: '💳',
+    icon: StreamlinedPaymentsIcon,
     title: 'Streamlined Payments',
     desc: 'Process bulk payments to multiple creators at once. Automated invoicing and transparent fee structure.',
     items: ['Bulk processing', 'Auto invoicing', 'Same-day payouts'],
   },
   {
-    icon: '📈',
+    icon: AdvancedAnalyticsIcon,
     title: 'Advanced Analytics',
     desc: 'Comprehensive reporting across all creators and campaigns. Make data-driven decisions to grow your agency.',
     items: ['Custom reports', 'Revenue tracking', 'Performance metrics'],
   },
   {
-    icon: '🤝',
+    icon: TeamCollaborationIcon,
     title: 'Team Collaboration',
     desc: 'Invite team members with role-based permissions. Collaborate efficiently on campaigns and creator management.',
     items: ['Role permissions', 'Team workflows', 'Activity logs'],
   },
   {
-    icon: '🎨',
+    icon: WhiteLabelOptionsIcon,
     title: 'White-Label Options',
     desc: 'Brand the platform as your own. Custom domain, logo, and colors for a seamless client experience.',
     items: ['Custom branding', 'Your domain', 'Agency logo'],
   },
   {
-    icon: '🔌',
+    icon: APIIntegrationsIcon,
     title: 'API & Integrations',
     desc: 'Connect with your existing tools. Full API access for custom integrations and automation workflows.',
     items: ['REST API', 'Webhooks', 'Custom integrations'],
@@ -50,8 +56,8 @@ export default function AgencyBenefits() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {benefits.map(({ icon, title, desc, items }) => (
             <div key={title} className="bg-white border border-gray-200 rounded-2xl p-5 lg:p-7 flex flex-col gap-4">
-              <div className="w-14 h-14 rounded-xl bg-[#009cde]/10 flex items-center justify-center text-2xl">
-                {icon}
+              <div className="w-14 h-14 rounded-xl bg-[#009cde]/10 flex items-center justify-center p-3">
+                <img src={icon} className="w-8 h-8 object-contain" alt="" />
               </div>
               <h3 className="text-lg font-bold text-black">{title}</h3>
               <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>

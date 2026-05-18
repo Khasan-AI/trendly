@@ -1,3 +1,5 @@
+import transparentCommissionIcon from '../../assets/icons/Transparent Commission Structure.svg'
+
 export default function AgencyCommission() {
   const stats = [
     { value: 'Flat Fee', desc: 'Simple monthly subscription, no surprises' },
@@ -13,7 +15,7 @@ export default function AgencyCommission() {
       <div className="max-w-[1024px] mx-auto w-full px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-6 items-start">
           <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
-            <span className="text-white text-xl">🏢</span>
+            <img src={transparentCommissionIcon} className="w-6 h-6 object-contain brightness-0 invert" alt="" />
           </div>
           <div className="flex-1">
             <h3 className="text-2xl font-bold text-white mb-2">Transparent Commission Structure</h3>

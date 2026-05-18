@@ -1,6 +1,9 @@
 import { useState } from 'react'
-import { Search, Plus, Minus, Mail, MessageCircle, Users } from 'lucide-react'
+import { Search, Plus, Minus } from 'lucide-react'
 import Footer from '../components/Footer'
+import SendEmailIcon from '../assets/icons/Send Email.svg'
+import OpenChatIcon from '../assets/icons/Open Chat.svg'
+import JoinCommunityIcon from '../assets/icons/Join Community.svg'
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -123,19 +126,19 @@ const sections = [
 
 const contactCards = [
   {
-    icon: <Mail size={24} className="text-[#009cde]" />,
+    icon: <img src={SendEmailIcon} className="w-6 h-6 object-contain" alt="" />,
     title: 'Send Email',
     desc: 'Get a response within 4 hours',
     link: 'support@trendly.com',
   },
   {
-    icon: <MessageCircle size={24} className="text-[#009cde]" />,
+    icon: <img src={OpenChatIcon} className="w-6 h-6 object-contain" alt="" />,
     title: 'Open Chat',
     desc: 'Chat with our support team',
     link: 'Start conversation',
   },
   {
-    icon: <Users size={24} className="text-[#009cde]" />,
+    icon: <img src={JoinCommunityIcon} className="w-6 h-6 object-contain" alt="" />,
     title: 'Join Community',
     desc: '4,200+ brands, creators, agencies',
     link: 'Join forum',

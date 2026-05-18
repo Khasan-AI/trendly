@@ -1,12 +1,18 @@
 import { ArrowRight } from 'lucide-react'
+import imgCPA from '../../assets/images/Why CPA Models Are Replacing Flat Fees in 2025.png'
+import imgFakeFollowers from '../../assets/images/How to Spot Fake Followers in 60 Seconds.png'
+import imgTikTok from '../../assets/images/TikTok Shop API Now Integrated with Trendly.png'
+import imgAgency from '../../assets/images/Agency Reduces Reporting Time by 40 Hours Monthly.png'
+import imgRevisionRule from '../../assets/images/The 3-Revision Rule Why It Protects Everyone.png'
+import imgAttribution from '../../assets/images/Attribution Windows What Marketers Get Wrong.png'
 
 const posts = [
-  { cat: 'Industry Trends', date: 'Mar 15, 2025', read: '5 min', title: 'Why CPA Models Are Replacing Flat Fees in 2025', excerpt: 'Performance-based pricing is becoming the new standard as brands demand measurable ROI from influencer partnerships.', color: 'bg-blue-100' },
-  { cat: 'Best Practices', date: 'Mar 12, 2025', read: '8 min', title: 'How to Spot Fake Followers in 60 Seconds', excerpt: 'Quick methods to identify bot accounts and engagement pods before committing to a creator partnership.', color: 'bg-purple-100' },
-  { cat: 'Platform Updates', date: 'Mar 10, 2025', read: '4 min', title: 'TikTok Shop API Now Integrated with Trendly', excerpt: 'Track product sales directly from TikTok Shop with our new native integration for complete attribution visibility.', color: 'bg-pink-100' },
-  { cat: 'Case Study', date: 'Mar 8, 2025', read: '6 min', title: 'Agency Reduces Reporting Time by 40 Hours Monthly', excerpt: 'How one performance marketing agency automated client reporting using Trendly\'s white-label dashboard.', color: 'bg-green-100' },
-  { cat: 'Legal & Compliance', date: 'Mar 5, 2025', read: '7 min', title: 'The 3-Revision Rule: Why It Protects Everyone', excerpt: 'Understanding how fixed iteration limits prevent scope creep and maintain healthy brand-creator relationships.', color: 'bg-orange-100' },
-  { cat: 'Data & Analytics', date: 'Mar 3, 2025', read: '9 min', title: 'Attribution Windows: What Marketers Get Wrong', excerpt: 'Common mistakes in setting attribution windows and how they impact campaign ROI calculations.', color: 'bg-cyan-100' },
+  { cat: 'Industry Trends', date: 'Mar 15, 2025', read: '5 min', title: 'Why CPA Models Are Replacing Flat Fees in 2025', excerpt: 'Performance-based pricing is becoming the new standard as brands demand measurable ROI from influencer partnerships.', image: imgCPA },
+  { cat: 'Best Practices', date: 'Mar 12, 2025', read: '8 min', title: 'How to Spot Fake Followers in 60 Seconds', excerpt: 'Quick methods to identify bot accounts and engagement pods before committing to a creator partnership.', image: imgFakeFollowers },
+  { cat: 'Platform Updates', date: 'Mar 10, 2025', read: '4 min', title: 'TikTok Shop API Now Integrated with Trendly', excerpt: 'Track product sales directly from TikTok Shop with our new native integration for complete attribution visibility.', image: imgTikTok },
+  { cat: 'Case Study', date: 'Mar 8, 2025', read: '6 min', title: 'Agency Reduces Reporting Time by 40 Hours Monthly', excerpt: 'How one performance marketing agency automated client reporting using Trendly\'s white-label dashboard.', image: imgAgency },
+  { cat: 'Legal & Compliance', date: 'Mar 5, 2025', read: '7 min', title: 'The 3-Revision Rule: Why It Protects Everyone', excerpt: 'Understanding how fixed iteration limits prevent scope creep and maintain healthy brand-creator relationships.', image: imgRevisionRule },
+  { cat: 'Data & Analytics', date: 'Mar 3, 2025', read: '9 min', title: 'Attribution Windows: What Marketers Get Wrong', excerpt: 'Common mistakes in setting attribution windows and how they impact campaign ROI calculations.', image: imgAttribution },
 ]
 
 export default function BlogStream() {
@@ -26,9 +32,9 @@ export default function BlogStream() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((p) => (
             <div key={p.title} className="border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-[#009cde]/30 hover:shadow-md transition-all flex flex-col">
-              {/* Image placeholder */}
-              <div className={`h-48 ${p.color} flex items-center justify-center`}>
-                <div className="w-16 h-16 rounded-xl bg-white/60 flex items-center justify-center text-2xl">📝</div>
+              {/* Image */}
+              <div className="h-48 overflow-hidden">
+                <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
               </div>
               {/* Content */}
               <div className="p-6 flex flex-col gap-3 flex-1">
