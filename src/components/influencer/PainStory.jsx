@@ -1,4 +1,7 @@
-import { X, Check } from 'lucide-react'
+import { X } from 'lucide-react'
+import PreFundedIcon from '../../assets/icons/Campaigns are pre-funded.svg'
+import BriefsLockedIcon from '../../assets/icons/Briefs are locked.svg'
+import PayoutsAutoIcon from '../../assets/icons/Payouts happen automatically.svg'
 
 const oldWay = [
   { title: 'Endless email threads', desc: 'Chasing brands for payment updates, invoice confirmations, and approvals' },
@@ -7,9 +10,9 @@ const oldWay = [
 ]
 
 const newWay = [
-  { title: 'Pre-funded campaigns', desc: 'Every brand deposits full budget before you start creating' },
-  { title: 'Clear briefs, limited revisions', desc: 'Maximum 3 revision rounds per campaign — no scope creep' },
-  { title: 'Automatic payouts', desc: 'Get paid within 24 hours of campaign approval' },
+  { icon: PreFundedIcon,  title: 'Pre-funded campaigns', desc: 'Every brand deposits full budget before you start creating' },
+  { icon: BriefsLockedIcon, title: 'Clear briefs, limited revisions', desc: 'Maximum 3 revision rounds per campaign — no scope creep' },
+  { icon: PayoutsAutoIcon, title: 'Automatic payouts', desc: 'Get paid within 24 hours of campaign approval' },
 ]
 
 export default function PainStory() {
@@ -53,8 +56,8 @@ export default function PainStory() {
             <ul className="flex flex-col gap-5">
               {newWay.map((item) => (
                 <li key={item.title} className="flex gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#009cde] flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="text-white" />
+                  <div className="w-10 h-10 rounded-xl bg-[#009cde]/10 flex items-center justify-center shrink-0 p-2">
+                    <img src={item.icon} className="w-full h-full object-contain" alt="" />
                   </div>
                   <div>
                     <div className="font-semibold text-black text-sm">{item.title}</div>

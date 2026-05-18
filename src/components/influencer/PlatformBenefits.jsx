@@ -1,23 +1,26 @@
-import { BarChart2, Zap, CalendarDays, MessageCircle } from 'lucide-react'
+import RealTimeAnalyticsIcon from '../../assets/icons/Real-Time Analytics.svg'
+import SmartMatchingIcon from '../../assets/icons/Smart Campaign Matching.svg'
+import ContentCalendarIcon from '../../assets/icons/Content Calendar.svg'
+import DirectBrandCommIcon from '../../assets/icons/Direct Brand Communication.svg'
 
 const features = [
   {
-    icon: BarChart2,
+    icon: RealTimeAnalyticsIcon,
     title: 'Real-Time Analytics',
     desc: 'Track your performance across all campaigns. See clicks, conversions, and earnings update in real-time with detailed breakdowns by platform and campaign type.',
   },
   {
-    icon: Zap,
+    icon: SmartMatchingIcon,
     title: 'Smart Campaign Matching',
     desc: 'Our AI matches you with campaigns that fit your audience demographics, engagement rate, and content style — so you only see relevant opportunities.',
   },
   {
-    icon: CalendarDays,
+    icon: ContentCalendarIcon,
     title: 'Content Calendar',
     desc: 'Manage all your campaigns in one place. See upcoming deadlines, revision requests, and posting schedules with automated reminders.',
   },
   {
-    icon: MessageCircle,
+    icon: DirectBrandCommIcon,
     title: 'Direct Brand Communication',
     desc: 'Chat directly with brands, ask questions about briefs, and receive feedback on revisions — all within the platform without email threads.',
   },
@@ -35,23 +38,20 @@ export default function PlatformBenefits() {
 
         {/* 2×2 Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {features.map((f) => {
-            const Icon = f.icon
-            return (
-              <div
-                key={f.title}
-                className="border-2 border-gray-200 rounded-2xl p-6 lg:p-8 flex gap-5 hover:border-[#009cde]/40 hover:shadow-md transition-all"
-              >
-                <div className="w-14 h-14 rounded-xl bg-[#009cde]/10 flex items-center justify-center shrink-0">
-                  <Icon size={26} className="text-[#009cde]" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-black mb-2">{f.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">{f.desc}</p>
-                </div>
+          {features.map((f) => (
+            <div
+              key={f.title}
+              className="border-2 border-gray-200 rounded-2xl p-6 lg:p-8 flex gap-5 hover:border-[#009cde]/40 hover:shadow-md transition-all"
+            >
+              <div className="w-14 h-14 rounded-xl bg-[#009cde]/10 flex items-center justify-center shrink-0 p-3">
+                <img src={f.icon} className="w-full h-full object-contain" alt="" />
               </div>
-            )
-          })}
+              <div>
+                <h3 className="text-lg font-bold text-black mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{f.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

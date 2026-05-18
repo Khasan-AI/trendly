@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import trendlyLogo from '../assets/icons/trendly-logo.svg'
 
 const navItems = [
   { label: 'Home',           path: '/' },
@@ -40,8 +41,8 @@ export default function Header() {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-black rounded-lg flex items-center justify-center shadow-sm">
-              <span className="text-white font-bold text-sm lg:text-lg">T</span>
+            <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg overflow-hidden flex items-center justify-center">
+              <img src={trendlyLogo} className="w-full h-full object-contain" alt="Trendly" />
             </div>
             <span className="text-xl lg:text-2xl font-bold tracking-tight text-gray-900">Trendly</span>
           </Link>
@@ -112,8 +113,8 @@ export default function Header() {
         {/* Drawer header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">T</span>
+            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
+              <img src={trendlyLogo} className="w-full h-full object-contain" alt="Trendly" />
             </div>
             <span className="text-xl font-bold text-black">Trendly</span>
           </Link>

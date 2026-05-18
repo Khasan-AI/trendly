@@ -1,8 +1,11 @@
-import { Check, Server, Lock, FileCheck } from 'lucide-react'
+import { Check } from 'lucide-react'
+import SeparatedInfraIcon from '../../assets/icons/Separated Infrastructure.svg'
+import AES256Icon from '../../assets/icons/AES-256 Encryption.svg'
+import TaxAuthorityIcon from '../../assets/icons/Tax Authority Integration.svg'
 
 const cards = [
   {
-    icon: Server,
+    icon: SeparatedInfraIcon,
     title: 'Separated Infrastructure',
     desc: 'Financial and content data stored on separate servers with independent security protocols and access controls.',
     points: [
@@ -12,13 +15,13 @@ const cards = [
     ],
   },
   {
-    icon: Lock,
+    icon: AES256Icon,
     title: 'AES-256 Encryption',
     desc: 'All API tokens, payment data, and sensitive information encrypted with military-grade AES-256 standard.',
     points: ['End-to-end encryption', 'Secure token storage', 'PCI DSS compliant'],
   },
   {
-    icon: FileCheck,
+    icon: TaxAuthorityIcon,
     title: 'Tax Authority Integration',
     desc: 'Direct integration with tax authorities for instant business verification and compliance documentation.',
     points: ['ЭЦП verification', 'Automated tax reporting', 'Legal entity validation'],
@@ -40,29 +43,26 @@ export default function EnterpriseFeatures() {
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cards.map((c) => {
-            const Icon = c.icon
-            return (
-              <div
-                key={c.title}
-                className="border border-gray-200 rounded-2xl p-6 lg:p-8 flex flex-col gap-5"
-              >
-                <div className="w-16 h-16 border-2 border-[#009cde] rounded-xl flex items-center justify-center">
-                  <Icon size={26} className="text-[#009cde]" />
-                </div>
-                <h3 className="text-xl font-bold text-black">{c.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{c.desc}</p>
-                <ul className="flex flex-col gap-2 mt-auto">
-                  {c.points.map((p) => (
-                    <li key={p} className="flex items-center gap-2.5 text-sm text-gray-600">
-                      <Check size={13} className="text-[#009cde] shrink-0" />
-                      {p}
-                    </li>
-                  ))}
-                </ul>
+          {cards.map((c) => (
+            <div
+              key={c.title}
+              className="border border-gray-200 rounded-2xl p-6 lg:p-8 flex flex-col gap-5"
+            >
+              <div className="w-16 h-16 border-2 border-[#009cde] rounded-xl flex items-center justify-center p-3">
+                <img src={c.icon} className="w-full h-full object-contain" alt="" />
               </div>
-            )
-          })}
+              <h3 className="text-xl font-bold text-black">{c.title}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{c.desc}</p>
+              <ul className="flex flex-col gap-2 mt-auto">
+                {c.points.map((p) => (
+                  <li key={p} className="flex items-center gap-2.5 text-sm text-gray-600">
+                    <Check size={13} className="text-[#009cde] shrink-0" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>

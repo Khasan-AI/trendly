@@ -1,25 +1,22 @@
 import { ArrowRight } from 'lucide-react'
+import SlackIcon from '../../assets/icons/Slack.svg'
+import GoogleAnalyticsIcon from '../../assets/icons/Google Analytics.svg'
+import DataStudioIcon from '../../assets/icons/Data Studio.svg'
+import HubSpotIcon from '../../assets/icons/HubSpot.svg'
+import ZapierIcon from '../../assets/icons/Zapier.svg'
+import StripeIcon from '../../assets/icons/Stripe.svg'
+import QuickBooksIcon from '../../assets/icons/QuickBooks.svg'
+import CustomAPIIcon from '../../assets/icons/Custom API.svg'
 
 const integrations = [
-  { name: 'Slack', desc: 'Real-time notifications' },
-  { name: 'Google Analytics', desc: 'Advanced tracking' },
-  { name: 'Data Studio', desc: 'Custom dashboards' },
-  { name: 'HubSpot', desc: 'CRM sync' },
-  { name: 'Zapier', desc: '5000+ app connections' },
-  { name: 'Stripe', desc: 'Payment processing' },
-  { name: 'QuickBooks', desc: 'Accounting sync' },
-  { name: 'Custom API', desc: 'Build your own' },
-]
-
-const colors = [
-  'bg-purple-100 text-purple-600',
-  'bg-blue-100 text-blue-600',
-  'bg-green-100 text-green-600',
-  'bg-orange-100 text-orange-600',
-  'bg-red-100 text-red-600',
-  'bg-indigo-100 text-indigo-600',
-  'bg-yellow-100 text-yellow-600',
-  'bg-gray-100 text-gray-600',
+  { icon: SlackIcon,           name: 'Slack',            desc: 'Real-time notifications' },
+  { icon: GoogleAnalyticsIcon, name: 'Google Analytics', desc: 'Advanced tracking' },
+  { icon: DataStudioIcon,      name: 'Data Studio',      desc: 'Custom dashboards' },
+  { icon: HubSpotIcon,         name: 'HubSpot',          desc: 'CRM sync' },
+  { icon: ZapierIcon,          name: 'Zapier',           desc: '5000+ app connections' },
+  { icon: StripeIcon,          name: 'Stripe',           desc: 'Payment processing' },
+  { icon: QuickBooksIcon,      name: 'QuickBooks',       desc: 'Accounting sync' },
+  { icon: CustomAPIIcon,       name: 'Custom API',       desc: 'Build your own' },
 ]
 
 export default function AgencyIntegrations() {
@@ -32,10 +29,10 @@ export default function AgencyIntegrations() {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          {integrations.map((intg, i) => (
+          {integrations.map((intg) => (
             <div key={intg.name} className="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col items-center gap-3 hover:border-[#009cde]/30 hover:shadow-md transition-all text-center">
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center text-lg font-bold ${colors[i]}`}>
-                {intg.name[0]}
+              <div className="w-14 h-14 rounded-xl bg-[#009cde]/10 flex items-center justify-center p-3">
+                <img src={intg.icon} className="w-full h-full object-contain" alt={intg.name} />
               </div>
               <h4 className="font-bold text-black">{intg.name}</h4>
               <p className="text-xs text-gray-500">{intg.desc}</p>

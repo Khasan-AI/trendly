@@ -1,26 +1,33 @@
-import { Monitor, FileText, DollarSign, MessageSquare, Check } from 'lucide-react'
+import MultiplePlatformIcon from '../../assets/icons/Multiple Platform Chaos.svg'
+import ManualReportingIcon from '../../assets/icons/Manual Reporting Hell.svg'
+import PaymentBudgetIcon from '../../assets/icons/Payment & Budget Tracking.svg'
+import InfluencerCommIcon from '../../assets/icons/Influencer Communication Breakdown.svg'
+import UnifiedDashboardIcon from '../../assets/icons/Unified Dashboard.svg'
+import AutomatedReportingIcon from '../../assets/icons/Automated Reporting.svg'
+import FinancialControlIcon from '../../assets/icons/Financial Control.svg'
+import CentralizedCommIcon from '../../assets/icons/Centralized Communication.svg'
 
 const problems = [
   {
-    icon: Monitor,
+    icon: MultiplePlatformIcon,
     title: 'Multiple Platform Chaos',
     desc: 'Managing campaigns across Instagram, TikTok, YouTube with different dashboards, reporting formats, and payment systems.',
     quote: '"We spend 20+ hours weekly just collecting data from different platforms"',
   },
   {
-    icon: FileText,
+    icon: ManualReportingIcon,
     title: 'Manual Reporting Hell',
     desc: 'Creating client reports manually, chasing influencers for screenshots, and calculating ROI across different campaign types.',
     quote: '"Our team spends 2 days monthly just preparing client reports"',
   },
   {
-    icon: DollarSign,
+    icon: PaymentBudgetIcon,
     title: 'Payment & Budget Tracking',
     desc: 'Tracking payments to hundreds of influencers, managing client budgets, and ensuring compliance across different currencies.',
     quote: '"We lost $15K last quarter due to payment tracking errors"',
   },
   {
-    icon: MessageSquare,
+    icon: InfluencerCommIcon,
     title: 'Influencer Communication Breakdown',
     desc: 'Managing communication with hundreds of creators across email, WhatsApp, Telegram, and Instagram DMs with no central system.',
     quote: '"We missed 3 campaign deadlines because messages got lost in different channels"',
@@ -28,10 +35,10 @@ const problems = [
 ]
 
 const solutions = [
-  { title: 'Unified Dashboard', desc: 'Manage all platforms, brands, and campaigns from one central hub with real-time sync.' },
-  { title: 'Automated Reporting', desc: 'White-label reports generated automatically with your branding, delivered to clients instantly.' },
-  { title: 'Financial Control', desc: 'Automated payments, budget tracking, and full audit trail with client billing integration.' },
-  { title: 'Centralized Communication', desc: 'Built-in messaging system with all influencer conversations, briefs, and approvals in one place.' },
+  { icon: UnifiedDashboardIcon, title: 'Unified Dashboard', desc: 'Manage all platforms, brands, and campaigns from one central hub with real-time sync.' },
+  { icon: AutomatedReportingIcon, title: 'Automated Reporting', desc: 'White-label reports generated automatically with your branding, delivered to clients instantly.' },
+  { icon: FinancialControlIcon, title: 'Financial Control', desc: 'Automated payments, budget tracking, and full audit trail with client billing integration.' },
+  { icon: CentralizedCommIcon, title: 'Centralized Communication', desc: 'Built-in messaging system with all influencer conversations, briefs, and approvals in one place.' },
 ]
 
 export default function AgencyProblems() {
@@ -46,25 +53,22 @@ export default function AgencyProblems() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Problems column */}
           <div className="flex flex-col gap-4">
-            {problems.map((p) => {
-              const Icon = p.icon
-              return (
-                <div key={p.title} className="border border-gray-200 rounded-2xl p-6 flex flex-col gap-3">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl border-2 border-[#009cde] flex items-center justify-center shrink-0">
-                      <Icon size={22} className="text-[#009cde]" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-black mb-1">{p.title}</h3>
-                      <p className="text-sm text-gray-500 leading-relaxed">{p.desc}</p>
-                    </div>
+            {problems.map((p) => (
+              <div key={p.title} className="border border-gray-200 rounded-2xl p-6 flex flex-col gap-3">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl border-2 border-[#009cde] flex items-center justify-center shrink-0 p-2.5">
+                    <img src={p.icon} className="w-full h-full object-contain" alt="" />
                   </div>
-                  <div className="bg-[#f5f7fa] border border-[#009cde]/20 rounded-xl px-4 py-2">
-                    <p className="text-xs text-gray-600 italic">{p.quote}</p>
+                  <div>
+                    <h3 className="font-bold text-black mb-1">{p.title}</h3>
+                    <p className="text-sm text-gray-500 leading-relaxed">{p.desc}</p>
                   </div>
                 </div>
-              )
-            })}
+                <div className="bg-[#f5f7fa] border border-[#009cde]/20 rounded-xl px-4 py-2">
+                  <p className="text-xs text-gray-600 italic">{p.quote}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
           {/* Solution column – black bg */}
@@ -73,8 +77,8 @@ export default function AgencyProblems() {
             <div className="flex flex-col gap-5">
               {solutions.map((s) => (
                 <div key={s.title} className="flex gap-4">
-                  <div className="w-10 h-10 rounded-xl border-2 border-[#009cde] flex items-center justify-center shrink-0">
-                    <Check size={16} className="text-[#009cde]" />
+                  <div className="w-10 h-10 rounded-xl border-2 border-[#009cde] flex items-center justify-center shrink-0 p-2">
+                    <img src={s.icon} className="w-full h-full object-contain" alt="" />
                   </div>
                   <div>
                     <div className="font-semibold text-white mb-0.5">{s.title}</div>

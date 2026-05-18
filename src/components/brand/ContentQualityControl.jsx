@@ -1,4 +1,9 @@
-import { FileText, RefreshCw, Check, ArrowRight } from 'lucide-react'
+import { Check, ArrowRight } from 'lucide-react'
+import CrystalBriefsIcon from '../../assets/icons/Crystal Clear Briefs.svg'
+import IterationLimitIcon from '../../assets/icons/3-Iteration Limit.svg'
+import AuditTrailConflictIcon from '../../assets/icons/audit trail.svg'
+import CampaignReportShareIcon from '../../assets/icons/Campaign Report Share.svg'
+import ZeroFraudConflictIcon from '../../assets/icons/zero fraud.svg'
 
 const briefItems = [
   {
@@ -23,17 +28,17 @@ const revisionSteps = [
 
 const conflictItems = [
   {
-    emoji: '📋',
+    icon: AuditTrailConflictIcon,
     title: 'Documented Everything',
     desc: 'All briefs, revisions, and feedback logged with timestamps',
   },
   {
-    emoji: '⚖️',
+    icon: CampaignReportShareIcon,
     title: 'Fair Mediation',
     desc: 'Platform team reviews disputes with full audit trail',
   },
   {
-    emoji: '🎯',
+    icon: ZeroFraudConflictIcon,
     title: 'Clear Outcomes',
     desc: 'Objective criteria for approval/rejection decisions',
   },
@@ -62,8 +67,8 @@ export default function ContentQualityControl() {
           {/* Crystal Clear Briefs */}
           <div className="bg-white border border-gray-200 rounded-2xl p-5 lg:p-7 flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 border-2 border-[#009cde] rounded-xl flex items-center justify-center">
-                <FileText size={20} className="text-[#009cde]" />
+              <div className="w-12 h-12 border-2 border-[#009cde] rounded-xl flex items-center justify-center p-2.5">
+                <img src={CrystalBriefsIcon} className="w-full h-full object-contain" alt="" />
               </div>
               <h3 className="text-xl font-bold text-black">Crystal Clear Briefs</h3>
             </div>
@@ -89,8 +94,8 @@ export default function ContentQualityControl() {
           {/* 3-Iteration Limit */}
           <div className="bg-white border border-gray-200 rounded-2xl p-5 lg:p-7 flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 border-2 border-[#009cde] rounded-xl flex items-center justify-center">
-                <RefreshCw size={20} className="text-[#009cde]" />
+              <div className="w-12 h-12 border-2 border-[#009cde] rounded-xl flex items-center justify-center p-2.5">
+                <img src={IterationLimitIcon} className="w-full h-full object-contain" alt="" />
               </div>
               <h3 className="text-xl font-bold text-black">3-Iteration Limit</h3>
             </div>
@@ -133,7 +138,9 @@ export default function ContentQualityControl() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {conflictItems.map((c) => (
               <div key={c.title} className="border border-gray-100 rounded-xl p-5">
-                <div className="text-3xl mb-3">{c.emoji}</div>
+                <div className="w-10 h-10 rounded-xl bg-[#009cde]/10 flex items-center justify-center p-2 mb-3">
+                  <img src={c.icon} className="w-full h-full object-contain" alt="" />
+                </div>
                 <div className="text-sm font-bold text-black mb-1">{c.title}</div>
                 <p className="text-xs text-gray-500 leading-relaxed">{c.desc}</p>
               </div>
