@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import trendlyLogo from '../assets/icons/trendly-logo.svg'
 
 const footerLinks = {
   Product: [
@@ -51,7 +52,7 @@ export default function Footer() {
 
           {/* Brand column */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1 flex flex-col gap-4">
-            <span className="text-2xl font-bold text-black">Trendly</span>
+            <img src={trendlyLogo} className="h-8 w-auto object-contain" alt="Trendly" />
             <p className="text-sm text-[#4b5563] leading-relaxed max-w-[320px]">
               The transparent performance marketing marketplace for brands, creators, and agencies.
             </p>
