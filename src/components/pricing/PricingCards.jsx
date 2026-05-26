@@ -1,7 +1,7 @@
+import tickIcon from '../../assets/icons/tick.svg'
+
 const CheckIcon = () => (
-  <svg width="14" height="11" viewBox="0 0 14 11" fill="none" style={{ flexShrink: 0, marginTop: 2 }}>
-    <path d="M1 5L5.5 9.5L13 1" stroke="#009cde" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
+  <img src={tickIcon} alt="" width={14} style={{ flexShrink: 0, marginTop: 2 }} />
 )
 
 const plans = {
